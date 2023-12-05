@@ -1,7 +1,0 @@
-type Item @model {
-  id: ID,
-  category: String,
-  name: String,
-  description: String,
-  isComplete: Bool
-}
