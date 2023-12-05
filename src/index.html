@@ -29,11 +29,10 @@ async function list() {
 
 const query = `
     {
-      Items {
-        Items {
+      people {
+        items {
           id
-          category
-          name
+          Name
         }
       }
     }`;
@@ -44,9 +43,8 @@ const response = await fetch(endpoint, {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query: query })
 });
-const result = await response.text();  //.json();
-console.log(result);
-//console.table(result.data.Items.Items);
+const result = await response.json();
+console.table(result.data.people.items);
 }
 </script>
   
